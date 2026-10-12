@@ -1,6 +1,6 @@
 <img src="assets/polybar.svg" width="100%" alt="NixOS Cyber-Rice — Alberto Davis" />
 
-<p><a href="#about"><img src="assets/nav-about.svg" width="25%" alt="01 About" /></a><a href="#languages"><img src="assets/nav-languages.svg" width="25%" alt="02 Skills" /></a><a href="#work"><img src="assets/nav-work.svg" width="25%" alt="03 Work" /></a><a href="#connect"><img src="assets/nav-connect.svg" width="25%" alt="04 Connect" /></a></p>
+<p><a href="#about"><img src="assets/nav-about.svg" width="25%" alt="01 About" /></a><a href="#skills"><img src="assets/nav-skills.svg" width="25%" alt="02 Skills &amp; Tools" /></a><a href="#work"><img src="assets/nav-work.svg" width="25%" alt="03 Work" /></a><a href="#connect"><img src="assets/nav-connect.svg" width="25%" alt="04 Connect" /></a></p>
 
 <picture>
   <source media="(max-width: 600px)" srcset="assets/hero-mobile.svg" />
@@ -11,11 +11,9 @@
 
 <p><img src="assets/about.svg" width="100%" alt="A little about me" /><img src="assets/about-content.svg" width="100%" alt="I’m Alberto Davis, a Full Stack Developer. I build web applications with PHP, MySQL, JavaScript and Python, from the database to the interface. My work spans business websites, booking systems, desktop tools and data analysis. I also explore networking, interface design and cybersecurity fundamentals." /></p>
 
-<a id="languages"></a>
+<a id="skills"></a>
 
-<p><img src="assets/stack.svg" width="100%" alt="Languages I work with" /><img src="assets/languages.svg" width="100%" alt="Portfolio self-assessments out of 100: HTML/CSS 82; SQL 77; Python 68; PHP 66; JavaScript 48; TypeScript/Next.js 48, provisional." /></p>
-
-<p><img src="assets/tools-heading.svg" width="100%" alt="Tools & capabilities" /><img src="assets/capabilities.svg" width="100%" alt="Portfolio self-assessments out of 100: Applied AI 68; UI/UX design 65; networking 60; cybersecurity 60; Scrum 56; Linux 43; Node.js 37." /><img src="assets/tools.svg" width="100%" alt="Design: Figma, interface design and interactive prototypes. AI assistance: Claude, Claude Code and AI with Python. Web and APIs: React, Next.js, Node.js, Vite and FastAPI. Desktop: PySide6, Npcap and Inno Setup. Data and infrastructure: MySQL, PostgreSQL, Apache, Azure and Vercel. Systems: Linux, TCP/IP, routing, switching, security fundamentals and network automation. Workflow: Scrum, data analysis and technical presentations." /></p>
+<p><img src="assets/stack.svg" width="100%" alt="Skills &amp; Tools — languages, practical capabilities and the tools I use." /><img src="assets/languages.svg" width="100%" alt="Portfolio self-assessments out of 100: HTML/CSS 82; SQL 77; Python 68; PHP 66; JavaScript 48; TypeScript/Next.js 48, provisional." /><img src="assets/capabilities.svg" width="100%" alt="Portfolio self-assessments out of 100: Applied AI 68; UI/UX design 65; networking 60; cybersecurity 60; Scrum 56; Linux 43; Node.js 37." /><img src="assets/tools.svg" width="100%" alt="Design: Figma, interface design and interactive prototypes. AI assistance: Claude, Claude Code and AI with Python. Web and APIs: React, Next.js, Node.js, Vite and FastAPI. Desktop: PySide6, Npcap and Inno Setup. Data and infrastructure: MySQL, PostgreSQL, Apache, Azure and Vercel. Systems: Linux, TCP/IP, routing, switching, security fundamentals and network automation. Workflow: Scrum, data analysis and technical presentations." /></p>
 
 <a id="work"></a>
 

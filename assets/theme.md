@@ -43,7 +43,7 @@ Edit `scripts/generate.py` to update artwork and chart values, then run `python 
 
 The five original project screenshots are copied from the portfolio’s public `imgs/` directory into `assets/screenshots/`. The generator embeds each PNG in a self-contained SVG with its name, description and stack on a black canvas. Project cards are linked from the README. No third-party image service is used.
 
-The four workspace buttons are separate SVG images wrapped in native HTML anchors. Links inside a standalone SVG image would not provide reliable README navigation. Section anchors target About, Languages, Work and Connect. Decorative graphic backgrounds are black throughout; GitHub controls page margins and spacing around README elements.
+The four workspace buttons are separate SVG images wrapped in native HTML anchors. Links inside a standalone SVG image would not provide reliable README navigation. Section anchors target About, Skills & Tools, Work and Connect. Decorative graphic backgrounds are black throughout; GitHub controls page margins and spacing around README elements.
 
 The chart’s two footnotes have been removed from its visible artwork at the owner’s request. Source and provisional-rating details remain here and in accessible metadata. Core content also has a collapsible plain-text alternative.
 
@@ -54,3 +54,5 @@ The capability chart reproduces existing portfolio personal ratings: applied AI 
 Additional tool and capability labels are grounded in the portfolio’s public descriptions: Figma, Claude, Claude Code, TCP/IP, routing, switching, network automation, technical presentations and data analysis. No education, institution, location or credential details appear in the presentation.
 
 Selected work is restricted to the five projects in the portfolio: Themis, Sentinel, Rochy Spa Center, Sabores del Mar and Vozelia. The first three link to their public sites. Vozelia links to its repository. Sabores del Mar also retains its repository link at the owner’s explicit request. Lucy and the repository-directory shortcut are removed from the profile’s project list and text alternative.
+
+Section 02 uses one heading and one anchor (`#skills`) for languages, capabilities and tools. No continuation heading or separately numbered subsection is used.

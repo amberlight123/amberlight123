@@ -39,8 +39,8 @@ def heading(name,number,title,sub):
 body=text(28,49,'AD',24,CYAN,700)+text(86,48,'NIXOS CYBER-RICE',18,WHITE,600,True)
 body+=f'<circle class="halo" cx="760" cy="43" r="4" fill="{CYAN}"/>'
 save('polybar.svg',800,70,body,'NixOS Cyber-Rice')
-for i,(slug,label) in enumerate([('about','ABOUT'),('languages','SKILLS'),('work','WORK'),('connect','CONNECT')]):
-    nav=text(20,36,f'{i+1:02} {label}',18,CYAN if i==0 else MUTED,600,True)
+for i,(slug,label) in enumerate([('about','ABOUT'),('skills','SKILLS & TOOLS'),('work','WORK'),('connect','CONNECT')]):
+    nav=text(20,36,f'{i+1:02} {label}',16 if slug=='skills' else 18,CYAN if i==0 else MUTED,600,True)
     if i==0: nav+=rect(20,48,136,3,BLUE)
     save(f'nav-{slug}.svg',200,68,nav,label)
 
@@ -61,7 +61,7 @@ body+=text(42,69,'HELLO, I AM',23,CYAN,600,True)+text(38,135,'Alberto Davis',55,
 body+=rect(42,213,350,1,DEEP)+f'<rect class="glint" x="42" y="212" width="64" height="2" fill="{CYAN}"/>'
 save('hero-mobile.svg',600,410,body,'Alberto Davis — Full Stack Developer')
 heading('about.svg','01','A little about me','Practical software. Clear interfaces. Purposeful design.')
-heading('stack.svg','02','Languages I work with','An original chart based on my portfolio self-assessments.')
+heading('stack.svg','02','Skills & Tools','Languages, practical capabilities and the tools I use.')
 heading('projects.svg','03','Selected work','From business workflows to networks and data analysis.')
 heading('contact.svg','04','Let’s build something useful','Open to freelance projects, collaboration and opportunities.')
 
@@ -103,7 +103,6 @@ copy_panel('about-content.svg',[
     'I’m Alberto Davis, a Full Stack Developer. I build web applications with PHP, MySQL, JavaScript and Python, from the database to the interface.',
     'My work spans business websites, booking systems, desktop tools and data analysis. I also explore networking, interface design and cybersecurity fundamentals.',
 ])
-heading('tools-heading.svg','02 / CONTINUED','Tools & capabilities','The tools I use and the skills behind my work.')
 capabilities=[('Applied AI',68),('UI / UX design',65),('Networking',60),('Cybersecurity',60),('Scrum',56),('Linux',43),('Node.js',37)]
 body=text(30,59,'CAPABILITY PROFILE',20,CYAN,600,True)+text(30,93,'Portfolio self-assessment · 0–100',22,MUTED)
 for i,(label,score) in enumerate(capabilities):
