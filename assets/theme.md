@@ -4,9 +4,9 @@ An original GitHub profile design for Alberto Davis. Source of professional info
 
 ## Visual system
 
-Black (`#000000`) is the canvas, outer gutter and section separator. Near-black (`#02091A`) is reserved for the hero surface. Deep blue (`#032999`) separates structural details; electric blue (`#0161EA`) and cyan (`#18DCF9`) provide accents. Neutral light text (`#E8F2F7`) and secondary text (`#A9C0CF`) improve readability. System sans-serif typography carries the content; monospace is limited to small labels and numbers.
+Black (`#000000`) is the canvas, outer gutter and section separator. Near-black (`#02091A`) is reserved for the hero surface. Deep blue (`#032999`) separates structural details; electric blue (`#0161EA`) and cyan (`#18DCF9`) provide accents. Neutral light text (`#F4F7FB`) and secondary text (`#C4D0DA`) improve readability. Pale cyan (`#9BEAF5`) distinguishes the role from brighter accent labels. System sans-serif typography carries the content; monospace is limited to small labels and numbers.
 
-Headings use natural language. Information remains readable in native Markdown, independent of decorative images. SVGs have accessible descriptions, local resources and no scripts, remote fonts or animation. The hero has a dedicated mobile composition. GitHub controls the surrounding page background; the profile cannot override visitors’ themes or apply global CSS.
+Headings use natural language. Information remains readable in native Markdown, independent of decorative images. SVGs have accessible descriptions, local resources and no scripts or remote fonts. SVG CSS provides a slow decorative halo pulse, a restrained hero light sweep and a one-time chart reveal. Text remains static. All motion is disabled under `prefers-reduced-motion: reduce`; the full chart and information remain visible without animation. The hero has a dedicated mobile composition. GitHub controls the surrounding page background; the profile cannot override visitors’ themes or apply global CSS.
 
 The six-arm emblem is original and is not an official NixOS logo. NixOS, i3 and Polybar are visual references, not claims about installed systems or technical proficiency.
 

@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="148" viewBox="0 0 800 148" role="img" aria-labelledby="title desc"><title id="title">Let’s build something useful</title><desc id="desc">Open to freelance projects, collaboration and opportunities.</desc><rect width="800" height="148" fill="#000000"/><rect x="24" y="29" width="4" height="67" fill="#0161EA" stroke="none"/><text x="46" y="49" font-family="Consolas,monospace" font-size="16" font-weight="600" fill="#18DCF9">04</text><text x="46" y="83" font-family="Segoe UI,Arial,sans-serif" font-size="32" font-weight="650" fill="#E8F2F7">Let’s build something useful</text><text x="46" y="115" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" fill="#A9C0CF">Open to freelance projects, collaboration and opportunities.</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="148" viewBox="0 0 800 148" role="img" aria-labelledby="title desc"><title id="title">Let’s build something useful</title><desc id="desc">Open to freelance projects, collaboration and opportunities.</desc><style>
+.halo{animation:halo 8s ease-in-out infinite}
+.glint{animation:glint 12s ease-in-out infinite}
+.bars{transform-box:fill-box;transform-origin:left center;animation:reveal 1.4s ease-out both}
+@keyframes halo{0%,100%{opacity:.45}50%{opacity:.9}}
+@keyframes glint{0%,100%{transform:translateX(0);opacity:.35}50%{transform:translateX(270px);opacity:.85}}
+@keyframes reveal{from{transform:scaleX(.05)}to{transform:scaleX(1)}}
+@media(prefers-reduced-motion:reduce){.halo,.glint,.bars{animation:none;transform:none;opacity:1}}
+</style><rect width="800" height="148" fill="#000000"/><rect x="24" y="29" width="4" height="67" fill="#0161EA" stroke="none"/><text x="46" y="49" font-family="Consolas,monospace" font-size="16" font-weight="600" fill="#18DCF9">04</text><text x="46" y="83" font-family="Segoe UI,Arial,sans-serif" font-size="32" font-weight="650" fill="#F4F7FB">Let’s build something useful</text><text x="46" y="115" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" fill="#C4D0DA">Open to freelance projects, collaboration and opportunities.</text></svg>
