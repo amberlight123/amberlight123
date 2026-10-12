@@ -56,3 +56,9 @@ Additional tool and capability labels are grounded in the portfolio’s public d
 Selected work is restricted to the five projects in the portfolio: Themis, Sentinel, Rochy Spa Center, Sabores del Mar and Vozelia. The first three link to their public sites. Vozelia links to its repository. Sabores del Mar also retains its repository link at the owner’s explicit request. Lucy and the repository-directory shortcut are removed from the profile’s project list and text alternative.
 
 Section 02 uses one heading and one anchor (`#skills`) for languages, capabilities and tools. No continuation heading or separately numbered subsection is used.
+
+## Persistent motion
+
+Skills & Tools uses a one-time bar reveal plus recurring light traces, so visible motion remains after scrolling to later content. Tool categories have staggered light pulses and a short initial entrance; text stays fully legible. Headings, project separators, statistics, contact buttons and the footer include slow recurring traces. Contact arrows move by five pixels. Decorative motion never changes a score, resizes a screenshot or hides essential text.
+
+All recurring motion is disabled with `prefers-reduced-motion: reduce`. Decorative traces disappear in that mode, while static borders, text, scores and full bars remain. Capability scores are independent self-assessments; a pie chart is deliberately avoided because they are not parts of a shared whole.

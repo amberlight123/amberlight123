@@ -24,15 +24,25 @@ def save(name,w,h,body,title,desc=''):
 .halo{animation:halo 8s ease-in-out infinite}
 .glint{animation:glint 12s ease-in-out infinite}
 .bars{transform-box:fill-box;transform-origin:left center;animation:reveal 1.4s ease-out both}
+.scan{stroke-dasharray:42 800;animation:flow 9s linear infinite}
+.arrive{animation:arrive 1.2s ease-out both}
+.arrow{animation:nudge 3.8s ease-in-out infinite}
 @keyframes halo{0%,100%{opacity:.45}50%{opacity:.9}}
 @keyframes glint{0%,100%{transform:translateX(0);opacity:.35}50%{transform:translateX(270px);opacity:.85}}
 @keyframes reveal{from{transform:scaleX(.05)}to{transform:scaleX(1)}}
-@media(prefers-reduced-motion:reduce){.halo,.glint,.bars{animation:none;transform:none;opacity:1}}
+@keyframes flow{from{stroke-dashoffset:842}to{stroke-dashoffset:0}}
+@keyframes arrive{from{opacity:.65;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+@media(prefers-reduced-motion:reduce){.halo,.glint,.bars,.scan,.arrive,.arrow{animation:none;transform:none;opacity:1}.scan{display:none}}
 </style>'''
     (A/name).write_text(f'''<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="title desc"><title id="title">{escape(title)}</title><desc id="desc">{escape(desc or title)}</desc>{style}<rect width="{w}" height="{h}" fill="{BLACK}"/>{body}</svg>''',encoding='utf-8')
 
+def scan(x,y,width,delay=0):
+    return f'<path class="scan" d="M {x} {y} h {width}" fill="none" stroke="{CYAN}" stroke-width="2" opacity=".8" style="animation-delay:-{delay}s"/>'
+
 def heading(name,number,title,sub):
     body=rect(24,29,4,67,BLUE)+text(46,49,number,16,CYAN,600,True)+text(46,83,title,32,WHITE,650)+text(46,115,sub,18,MUTED)
+    body+=scan(46,135,710)
     save(name,800,148,body,title,sub)
 
 # Black gutters are part of every image, independent of GitHub's theme.
@@ -77,26 +87,32 @@ for i,(label,score) in enumerate(languages):
         if j*4<score:
             width=min(23,max(0,(score-j*4)/4*23))
             body+=rect(round(x,2),y+17,round(width,2),16,CYAN if j%5==4 else BLUE)
-    body+='</g>'+rect(30,y+17,1,16,DEEP)
+    body+='</g>'+rect(30,y+17,1,16,DEEP)+scan(30,y+25,round(score*7.26,2),i*.8)
 save('languages.svg',800,650,body,'Language self-assessments: HTML/CSS 82, SQL 77, Python 68, PHP 66, JavaScript 48, TypeScript/Next.js 48 provisional','Source: albdavis.zenreverse.space. Original segmented bars on a black background. These are personal estimates, not repository language shares or objective skill measurements.')
 
 body=text(30,49,'PUBLIC WORK',19,CYAN,600,True)
 for x,n,label in [(30,'04','original projects'),(285,'01','practice fork'),(540,'01','profile repository')]:
     body+=text(x,115,n,44,WHITE,650)+text(x,151,label,18,MUTED)
 body+=text(30,196,'GitHub snapshot · October 12, 2026',19,MUTED)
+body+=rect(30,216,740,1,DEEP)+scan(30,216,740)
 save('stats.svg',800,230,body,'GitHub snapshot: four original public projects, one practice fork, one profile repository; October 12, 2026')
-body=rect(28,32,744,1,DEEP)+text(28,73,'ALBERTO DAVIS',18,WHITE,600,True)+text(489,73,'NIXOS CYBER-RICE',18,CYAN,400,True)
+body=rect(28,32,744,1,DEEP)+scan(28,32,744)+text(28,73,'ALBERTO DAVIS',18,WHITE,600,True)+text(489,73,'NIXOS CYBER-RICE',18,CYAN,400,True)
 save('divider.svg',800,110,body,'Alberto Davis — NixOS Cyber-Rice')
 save('spacer.svg',800,42,'','Decorative black section separator')
 
 def copy_panel(name,paragraphs):
     body=''
     y=36
-    for paragraph in paragraphs:
+    for index,paragraph in enumerate(paragraphs):
+        body+=f'<g class="arrive" style="animation-delay:{min(index*.09,.8):.2f}s">'
+        if paragraph.isupper():
+            body+=f'<rect class="halo" x="14" y="{y-17}" width="3" height="22" fill="{CYAN}" style="animation-delay:-{index*.5}s"/>'
         for line in textwrap.wrap(paragraph,57):
             body+=text(30,y,line,20 if paragraph.isupper() else 24,CYAN if paragraph.isupper() else WHITE,600 if paragraph.isupper() else 400)
             y+=35
+        body+='</g>'
         y+=22
+    body+=rect(30,y,740,1,DEEP)+scan(30,y,740)
     save(name,800,y+12,body,' '.join(paragraphs))
 
 copy_panel('about-content.svg',[
@@ -114,7 +130,7 @@ for i,(label,score) in enumerate(capabilities):
         if j*4<score:
             width=min(23,max(0,(score-j*4)/4*23))
             body+=rect(round(30+j*29.04,2),y+17,round(width,2),16,CYAN if j%5==4 else BLUE)
-    body+='</g>'
+    body+='</g>'+scan(30,y+25,round(score*7.26,2),i*.9)
 save('capabilities.svg',800,734,body,'Portfolio capability self-assessments out of 100: Applied AI 68, UI/UX design 65, networking 60, cybersecurity 60, Scrum 56, Linux 43, Node.js 37.','Original animated chart using existing personal portfolio ratings; no new proficiency values are inferred.')
 copy_panel('tools.svg',[
     'DESIGN & PROTOTYPING',
@@ -156,8 +172,10 @@ for slug,title,description,stack in projects:
     for line in textwrap.wrap(stack,65):
         body+=text(30,y,line,20,MUTED)
         y+=30
-    body+=rect(30,y+20,740,1,DEEP)
+    body+=rect(30,y+20,740,1,DEEP)+scan(30,y+20,740)
     save(f'project-{slug}.svg',800,y+58,body,f'{title}: {description} {stack}','Original project screenshot from albdavis.zenreverse.space, with an accessible project description.')
 for slug,label in [('portfolio','PORTFOLIO & CONTACT ↗'),('linkedin','LINKEDIN ↗'),('github','GITHUB ↗')]:
-    save(f'link-{slug}.svg',800,68,rect(30,8,740,46,SURFACE,DEEP)+text(48,39,label,23,CYAN,600),label)
+    body=rect(30,8,740,46,SURFACE,DEEP)+text(48,39,label.replace(' ↗',''),23,WHITE,600)
+    body+='<g class="arrow">'+text(726,39,'↗',23,CYAN,600)+'</g>'+scan(30,54,740)
+    save(f'link-{slug}.svg',800,68,body,label)
 print('Generated self-contained SVG artwork and functional navigation segments.')

@@ -2,8 +2,14 @@
 .halo{animation:halo 8s ease-in-out infinite}
 .glint{animation:glint 12s ease-in-out infinite}
 .bars{transform-box:fill-box;transform-origin:left center;animation:reveal 1.4s ease-out both}
+.scan{stroke-dasharray:42 800;animation:flow 9s linear infinite}
+.arrive{animation:arrive 1.2s ease-out both}
+.arrow{animation:nudge 3.8s ease-in-out infinite}
 @keyframes halo{0%,100%{opacity:.45}50%{opacity:.9}}
 @keyframes glint{0%,100%{transform:translateX(0);opacity:.35}50%{transform:translateX(270px);opacity:.85}}
 @keyframes reveal{from{transform:scaleX(.05)}to{transform:scaleX(1)}}
-@media(prefers-reduced-motion:reduce){.halo,.glint,.bars{animation:none;transform:none;opacity:1}}
-</style><rect width="800" height="68" fill="#000000"/><rect x="30" y="8" width="740" height="46" fill="#02091A" stroke="#032999"/><text x="48" y="39" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="600" fill="#18DCF9">GITHUB ↗</text></svg>
+@keyframes flow{from{stroke-dashoffset:842}to{stroke-dashoffset:0}}
+@keyframes arrive{from{opacity:.65;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+@media(prefers-reduced-motion:reduce){.halo,.glint,.bars,.scan,.arrive,.arrow{animation:none;transform:none;opacity:1}.scan{display:none}}
+</style><rect width="800" height="68" fill="#000000"/><rect x="30" y="8" width="740" height="46" fill="#02091A" stroke="#032999"/><text x="48" y="39" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="600" fill="#F4F7FB">GITHUB</text><g class="arrow"><text x="726" y="39" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="600" fill="#18DCF9">↗</text></g><path class="scan" d="M 30 54 h 740" fill="none" stroke="#18DCF9" stroke-width="2" opacity=".8" style="animation-delay:-0s"/></svg>
