@@ -46,3 +46,11 @@ The five original project screenshots are copied from the portfolio’s public `
 The four workspace buttons are separate SVG images wrapped in native HTML anchors. Links inside a standalone SVG image would not provide reliable README navigation. Section anchors target About, Languages, Work and Connect. Decorative graphic backgrounds are black throughout; GitHub controls page margins and spacing around README elements.
 
 The chart’s two footnotes have been removed from its visible artwork at the owner’s request. Source and provisional-rating details remain here and in accessible metadata. Core content also has a collapsible plain-text alternative.
+
+## Tools and capability chart
+
+The capability chart reproduces existing portfolio personal ratings: applied AI 68, UI/UX 65, networking 60, cybersecurity 60, Scrum 56, Linux 43 and Node.js 37. These are personal assessments rather than objective measurements. The source’s cybersecurity rating is provisional. Tools without published scores appear in grouped text, without inferred numerical ratings.
+
+Additional tool and capability labels are grounded in the portfolio’s public descriptions: Figma, Claude, Claude Code, TCP/IP, routing, switching, network automation, technical presentations and data analysis. No education, institution, location or credential details appear in the presentation.
+
+Selected work is restricted to the five projects in the portfolio: Themis, Sentinel, Rochy Spa Center, Sabores del Mar and Vozelia. The first three link to their public sites. Vozelia links to its repository. Sabores del Mar also retains its repository link at the owner’s explicit request. Lucy and the repository-directory shortcut are removed from the profile’s project list and text alternative.

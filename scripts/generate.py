@@ -39,7 +39,7 @@ def heading(name,number,title,sub):
 body=text(28,49,'AD',24,CYAN,700)+text(86,48,'NIXOS CYBER-RICE',18,WHITE,600,True)
 body+=f'<circle class="halo" cx="760" cy="43" r="4" fill="{CYAN}"/>'
 save('polybar.svg',800,70,body,'NixOS Cyber-Rice')
-for i,(slug,label) in enumerate([('about','ABOUT'),('languages','LANGUAGES'),('work','WORK'),('connect','CONNECT')]):
+for i,(slug,label) in enumerate([('about','ABOUT'),('languages','SKILLS'),('work','WORK'),('connect','CONNECT')]):
     nav=text(20,36,f'{i+1:02} {label}',18,CYAN if i==0 else MUTED,600,True)
     if i==0: nav+=rect(20,48,136,3,BLUE)
     save(f'nav-{slug}.svg',200,68,nav,label)
@@ -94,7 +94,7 @@ def copy_panel(name,paragraphs):
     y=36
     for paragraph in paragraphs:
         for line in textwrap.wrap(paragraph,57):
-            body+=text(30,y,line,24,WHITE)
+            body+=text(30,y,line,20 if paragraph.isupper() else 24,CYAN if paragraph.isupper() else WHITE,600 if paragraph.isupper() else 400)
             y+=35
         y+=22
     save(name,800,y+12,body,' '.join(paragraphs))
@@ -103,10 +103,36 @@ copy_panel('about-content.svg',[
     'I’m Alberto Davis, a Full Stack Developer. I build web applications with PHP, MySQL, JavaScript and Python, from the database to the interface.',
     'My work spans business websites, booking systems, desktop tools and data analysis. I also explore networking, interface design and cybersecurity fundamentals.',
 ])
+heading('tools-heading.svg','02 / CONTINUED','Tools & capabilities','The tools I use and the skills behind my work.')
+capabilities=[('Applied AI',68),('UI / UX design',65),('Networking',60),('Cybersecurity',60),('Scrum',56),('Linux',43),('Node.js',37)]
+body=text(30,59,'CAPABILITY PROFILE',20,CYAN,600,True)+text(30,93,'Portfolio self-assessment · 0–100',22,MUTED)
+for i,(label,score) in enumerate(capabilities):
+    y=147+i*84
+    body+=text(30,y,label,28,WHITE,600)+text(704,y,str(score),26,CYAN,600,True)
+    body+=rect(30,y+17,726,16,SURFACE)
+    body+=f'<g class="bars" style="animation-delay:{i*.12:.2f}s">'
+    for j in range(25):
+        if j*4<score:
+            width=min(23,max(0,(score-j*4)/4*23))
+            body+=rect(round(30+j*29.04,2),y+17,round(width,2),16,CYAN if j%5==4 else BLUE)
+    body+='</g>'
+save('capabilities.svg',800,734,body,'Portfolio capability self-assessments out of 100: Applied AI 68, UI/UX design 65, networking 60, cybersecurity 60, Scrum 56, Linux 43, Node.js 37.','Original animated chart using existing personal portfolio ratings; no new proficiency values are inferred.')
 copy_panel('tools.svg',[
-    'Web: React, Next.js, Node.js and Vite.',
-    'Desktop & APIs: PySide6 and FastAPI.',
-    'Data & infrastructure: MySQL, PostgreSQL, Apache, Azure and Vercel.',
+    'DESIGN & PROTOTYPING',
+    'Figma · Interface design · Interactive prototypes',
+    'AI & DEVELOPMENT ASSISTANCE',
+    'Claude · Claude Code · AI with Python',
+    'WEB & API DEVELOPMENT',
+    'React · Next.js · Node.js · Vite · FastAPI',
+    'DESKTOP & DELIVERY',
+    'PySide6 · Npcap · Inno Setup',
+    'DATA & INFRASTRUCTURE',
+    'MySQL · PostgreSQL · Apache · Azure · Vercel',
+    'NETWORKS & SYSTEMS',
+    'Linux · TCP/IP · Routing · Switching',
+    'Security fundamentals · Network automation',
+    'WORKFLOW & COMMUNICATION',
+    'Scrum · Data analysis · Technical presentations',
 ])
 copy_panel('connect-content.svg',['Have a project in mind? Let’s build something useful together.'])
 projects=[
