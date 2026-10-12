@@ -38,3 +38,11 @@ Edit `scripts/generate.py` to update artwork and chart values, then run `python 
 ## Inspiration
 
 [Polybar Themes](https://github.com/adi1090x/polybar-themes), [NixOS Branding](https://github.com/NixOS/branding), [Profile Signal Kit](https://github.com/saroo98/profile-signal-kit) and [SVG README](https://github.com/Wenoxxxx/svg-readme). No reference code or artwork is incorporated.
+
+## Project screenshots and navigation
+
+The five original project screenshots are copied from the portfolio’s public `imgs/` directory into `assets/screenshots/`. The generator embeds each PNG in a self-contained SVG with its name, description and stack on a black canvas. Project cards are linked from the README. No third-party image service is used.
+
+The four workspace buttons are separate SVG images wrapped in native HTML anchors. Links inside a standalone SVG image would not provide reliable README navigation. Section anchors target About, Languages, Work and Connect. Decorative graphic backgrounds are black throughout; GitHub controls page margins and spacing around README elements.
+
+The chart’s two footnotes have been removed from its visible artwork at the owner’s request. Source and provisional-rating details remain here and in accessible metadata. Core content also has a collapsible plain-text alternative.

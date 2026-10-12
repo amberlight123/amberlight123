@@ -1,6 +1,9 @@
 """Generate the GitHub profile artwork using Python standard library only."""
 from pathlib import Path
 from html import escape
+import base64
+import struct
+import textwrap
 ROOT=Path(__file__).resolve().parents[1]
 A=ROOT/'assets'
 A.mkdir(exist_ok=True)
@@ -34,9 +37,12 @@ def heading(name,number,title,sub):
 
 # Black gutters are part of every image, independent of GitHub's theme.
 body=text(28,49,'AD',24,CYAN,700)+text(86,48,'NIXOS CYBER-RICE',18,WHITE,600,True)
-body+=text(28,91,'01 ABOUT',18,CYAN,600,True)+text(195,91,'02 LANGUAGES',18,MUTED,400,True)+text(410,91,'03 WORK',18,MUTED,400,True)+text(580,91,'04 CONNECT',18,MUTED,400,True)
-body+=rect(28,104,102,3,BLUE)+f'<circle class="halo" cx="760" cy="43" r="4" fill="{CYAN}"/>'
-save('polybar.svg',800,132,body,'NixOS Cyber-Rice — About, Languages, Work, Connect')
+body+=f'<circle class="halo" cx="760" cy="43" r="4" fill="{CYAN}"/>'
+save('polybar.svg',800,70,body,'NixOS Cyber-Rice')
+for i,(slug,label) in enumerate([('about','ABOUT'),('languages','LANGUAGES'),('work','WORK'),('connect','CONNECT')]):
+    nav=text(20,36,f'{i+1:02} {label}',18,CYAN if i==0 else MUTED,600,True)
+    if i==0: nav+=rect(20,48,136,3,BLUE)
+    save(f'nav-{slug}.svg',200,68,nav,label)
 
 def emblem(cx,cy,r):
     s=f'<circle class="halo" cx="{cx}" cy="{cy}" r="{r+30}" fill="none" stroke="{BLUE}" stroke-dasharray="3 12"/>'
@@ -59,7 +65,7 @@ heading('stack.svg','02','Languages I work with','An original chart based on my 
 heading('projects.svg','03','Selected work','From business workflows to networks and data analysis.')
 heading('contact.svg','04','Let’s build something useful','Open to freelance projects, collaboration and opportunities.')
 
-languages=[('HTML / CSS',82),('SQL',77),('Python',68),('PHP',66),('JavaScript',48),('TypeScript*',48)]
+languages=[('HTML / CSS',82),('SQL',77),('Python',68),('PHP',66),('JavaScript',48),('TypeScript',48)]
 body=text(30,59,'LANGUAGE PROFILE',20,CYAN,600,True)+text(30,93,'Portfolio self-assessment · 0–100',22,MUTED)
 for i,(label,score) in enumerate(languages):
     y=147+i*84
@@ -72,9 +78,7 @@ for i,(label,score) in enumerate(languages):
             width=min(23,max(0,(score-j*4)/4*23))
             body+=rect(round(x,2),y+17,round(width,2),16,CYAN if j%5==4 else BLUE)
     body+='</g>'+rect(30,y+17,1,16,DEEP)
-body+=text(30,681,'* TypeScript / Next.js: provisional portfolio rating.',19,MUTED)
-body+=text(30,714,'Personal estimates, not measured proficiency.',20,MUTED)
-save('languages.svg',800,750,body,'Language self-assessments: HTML/CSS 82, SQL 77, Python 68, PHP 66, JavaScript 48, TypeScript/Next.js 48 provisional','Source: albdavis.zenreverse.space. Original segmented bars on a black background. These are personal estimates, not repository language shares or objective skill measurements.')
+save('languages.svg',800,650,body,'Language self-assessments: HTML/CSS 82, SQL 77, Python 68, PHP 66, JavaScript 48, TypeScript/Next.js 48 provisional','Source: albdavis.zenreverse.space. Original segmented bars on a black background. These are personal estimates, not repository language shares or objective skill measurements.')
 
 body=text(30,49,'PUBLIC WORK',19,CYAN,600,True)
 for x,n,label in [(30,'04','original projects'),(285,'01','practice fork'),(540,'01','profile repository')]:
@@ -84,4 +88,51 @@ save('stats.svg',800,230,body,'GitHub snapshot: four original public projects, o
 body=rect(28,32,744,1,DEEP)+text(28,73,'ALBERTO DAVIS',18,WHITE,600,True)+text(489,73,'NIXOS CYBER-RICE',18,CYAN,400,True)
 save('divider.svg',800,110,body,'Alberto Davis — NixOS Cyber-Rice')
 save('spacer.svg',800,42,'','Decorative black section separator')
-print('Generated 11 self-contained SVG assets.')
+
+def copy_panel(name,paragraphs):
+    body=''
+    y=36
+    for paragraph in paragraphs:
+        for line in textwrap.wrap(paragraph,57):
+            body+=text(30,y,line,24,WHITE)
+            y+=35
+        y+=22
+    save(name,800,y+12,body,' '.join(paragraphs))
+
+copy_panel('about-content.svg',[
+    'I’m Alberto Davis, a Full Stack Developer. I build web applications with PHP, MySQL, JavaScript and Python, from the database to the interface.',
+    'My work spans business websites, booking systems, desktop tools and data analysis. I also explore networking, interface design and cybersecurity fundamentals.',
+])
+copy_panel('tools.svg',[
+    'Web: React, Next.js, Node.js and Vite.',
+    'Desktop & APIs: PySide6 and FastAPI.',
+    'Data & infrastructure: MySQL, PostgreSQL, Apache, Azure and Vercel.',
+])
+copy_panel('connect-content.svg',['Have a project in mind? Let’s build something useful together.'])
+projects=[
+    ('themis','Themis','A web platform for CSV analysis, unusual record detection and visual results.','Next.js · TypeScript · FastAPI · PostgreSQL · Azure'),
+    ('sentinel','Sentinel','A desktop application for local network discovery and open-port auditing.','Python · PySide6 · Npcap'),
+    ('rochy','Rochy Spa Center','Online bookings, customer accounts and an administration panel for appointment management.','JavaScript · Node.js · PostgreSQL · HTML/CSS'),
+    ('sabores','Sabores del Mar','Menus, orders and reservations in one restaurant website.','PHP · MySQL · HTML/CSS'),
+    ('vozelia','Vozelia','A personal project exploring VoIP operations and administration. Independent of the company that inspired it.','PHP · MySQL · JavaScript · Apache'),
+]
+for slug,title,description,stack in projects:
+    raw=(A/'screenshots'/f'{slug}.png').read_bytes()
+    width,height=struct.unpack('>II',raw[16:24])
+    image_h=round(740*height/width)
+    body=text(30,54,title,34,WHITE,650)+text(30,89,'VIEW PROJECT ↗',17,CYAN,600,True)
+    uri=base64.b64encode(raw).decode('ascii')
+    body+=f'<image x="30" y="114" width="740" height="{image_h}" href="data:image/png;base64,{uri}"/>'
+    y=114+image_h+42
+    for line in textwrap.wrap(description,57):
+        body+=text(30,y,line,24)
+        y+=35
+    y+=12
+    for line in textwrap.wrap(stack,65):
+        body+=text(30,y,line,20,MUTED)
+        y+=30
+    body+=rect(30,y+20,740,1,DEEP)
+    save(f'project-{slug}.svg',800,y+58,body,f'{title}: {description} {stack}','Original project screenshot from albdavis.zenreverse.space, with an accessible project description.')
+for slug,label in [('portfolio','PORTFOLIO & CONTACT ↗'),('linkedin','LINKEDIN ↗'),('github','GITHUB ↗')]:
+    save(f'link-{slug}.svg',800,68,rect(30,8,740,46,SURFACE,DEEP)+text(48,39,label,23,CYAN,600),label)
+print('Generated self-contained SVG artwork and functional navigation segments.')
