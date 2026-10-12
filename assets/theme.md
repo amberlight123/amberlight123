@@ -1,44 +1,40 @@
 # NixOS Cyber-Rice
 
-Identidad visual original para Alberto Davis / amberlight123. Ventanas rectangulares, gaps de 12 px en el hero, bordes de 1 px, tipografía monoespaciada del sistema y fondos oscuros autocontenidos.
+An original GitHub profile design for Alberto Davis. Source of professional information: [live portfolio](https://albdavis.zenreverse.space), reviewed October 12, 2026.
 
-## Paleta
+## Visual system
 
-| Token | Color | Uso |
-| --- | --- | --- |
-| Cyan | `#18DCF9` | Texto legible e iluminación localizada |
-| Electric | `#0161EA` | Ventana activa y segmentos |
-| Deep | `#032999` | Estructura secundaria |
-| Surface | `#02091A` | Terminales |
-| Background | `#000000` | Fondo |
+Black (`#000000`) is the canvas, outer gutter and section separator. Near-black (`#02091A`) is reserved for the hero surface. Deep blue (`#032999`) separates structural details; electric blue (`#0161EA`) and cyan (`#18DCF9`) provide accents. Neutral light text (`#E8F2F7`) and secondary text (`#A9C0CF`) improve readability. System sans-serif typography carries the content; monospace is limited to small labels and numbers.
 
-El texto esencial utiliza cian sobre azul casi negro; el azul eléctrico se reserva a estructura y decoración. El emblema es original: no incorpora el logo oficial de NixOS ni implica afiliación. NixOS, i3 y Polybar describen la inspiración visual, no sistemas instalados ni competencias acreditadas.
+Headings use natural language. Information remains readable in native Markdown, independent of decorative images. SVGs have accessible descriptions, local resources and no scripts, remote fonts or animation. The hero has a dedicated mobile composition. GitHub controls the surrounding page background; the profile cannot override visitors’ themes or apply global CSS.
 
-## Fuentes del contenido
+The six-arm emblem is original and is not an official NixOS logo. NixOS, i3 and Polybar are visual references, not claims about installed systems or technical proficiency.
 
-- [Identidad GitHub](https://github.com/amberlight123).
-- [Presentación, formación, idiomas, habilidades y contacto](https://github.com/amberlight123/portafolio/blob/main/index.html).
-- [Vozelia: contexto y tecnologías](https://github.com/amberlight123/vozelia_site_personal_project/blob/main/README_CONTEXT.md).
-- [Lucy: funciones y alcance](https://github.com/amberlight123/lucy-activos-utp/blob/master/docs/lucy-funciones-objetivos-alcance.md), [dependencias](https://github.com/amberlight123/lucy-activos-utp/blob/master/package.json).
-- [Sabores del Mar](https://github.com/amberlight123/Sabores-del-Mar/blob/master/README.md).
+## Language chart
 
-Solo se publican datos ya presentes en fuentes públicas. No se publican contenidos de repositorios privados. Se conserva la condición de estudiante indicada en la formación del portafolio, sin convertir su título de portada en un grado obtenido. No se trasladan porcentajes subjetivos de habilidades.
+`assets/languages.svg` is a custom segmented horizontal bar chart. It reproduces the live portfolio’s published personal ratings, rather than inferring skills from repository sizes:
 
-## Diagnósticos
+| Portfolio category | Personal rating / 100 |
+| --- | ---: |
+| HTML / CSS | 82 |
+| SQL / MySQL / PostgreSQL | 77 |
+| Python | 68 |
+| PHP | 66 |
+| JavaScript | 48 |
+| TypeScript / Next.js | 48 — provisional |
 
-Corte: 2026-10-12, posterior a crear el perfil. Repositorios públicos de `amberlight123`: 6. Se excluyen `amberlight123` (perfil) y `PracticaCompiladorC` (fork) del reparto de lenguajes: Sabores-del-Mar y Vozelia → PHP; portafolio → HTML; Lucy → TypeScript. Se usa el lenguaje principal de cada repositorio informado por GitHub; no volumen de código ni dominio. Sin actividad inventada, cron ni servicios de estadísticas externos.
+The grouped categories are preserved in the accessible README explanation. TypeScript / Next.js is explicitly provisional in the source. These are self-assessments, not objective measurements, certifications, market benchmarks or shares of code. Do not assign values to languages that lack ratings.
 
-Actualizar los recuentos en `scripts/generate.py`, esta nota y el README cuando cambien. Verificar con `gh api users/amberlight123/repos --paginate`. Para regenerar recursos: `python scripts/generate.py` (biblioteca estándar; sin dependencias). El script no consulta APIs ni publica cambios.
+## Content and privacy
 
-## Compatibilidad y accesibilidad
+The profile uses only the display name Alberto Davis. Personal education and location details are omitted from the current README, artwork, metadata and generator. Contact goes through the portfolio and publicly listed professional channels. The linked portfolio remains an external, independently maintained source. Earlier Git commits remain in normal history.
 
-SVG autocontenidos sin JavaScript, fuentes remotas, imágenes externas ni `foreignObject`. README con texto, enlaces y tablas nativas como alternativa a los gráficos. Hero móvil mediante `picture`; gráficos fluidos con `viewBox`. Todo el contenido funciona estático. Única animación: cursor discreto durante tres ciclos, desactivado con `prefers-reduced-motion`. Los módulos de barra son decorativos; la navegación funcional está en enlaces Markdown.
+Project descriptions follow the portfolio; Lucy’s additional link follows its public repository. No private repository content is published. The public GitHub snapshot dated October 12, 2026 counts four original project repositories, one practice fork and this profile repository.
 
-## Referencias de diseño
+## Maintenance
 
-- [Polybar Themes: Hack, Cuts, Shades y Blocks](https://github.com/adi1090x/polybar-themes): separación modular y geometría angular.
-- [NixOS Branding](https://github.com/NixOS/branding): referencia geométrica, sin reutilizar sus recursos.
-- [Profile Signal Kit](https://github.com/saroo98/profile-signal-kit): jerarquía de recursos SVG locales.
-- [SVG README](https://github.com/Wenoxxxx/svg-readme): composición autocontenida y animación opcional.
+Edit `scripts/generate.py` to update artwork and chart values, then run `python scripts/generate.py`. Python standard library only. Update the README alternative text and this note when changing values. Commit only README.md, assets/ and scripts/. No automatic updates or external statistics services are required.
 
-No se copia código ni se incorporan activos de estas referencias.
+## Inspiration
+
+[Polybar Themes](https://github.com/adi1090x/polybar-themes), [NixOS Branding](https://github.com/NixOS/branding), [Profile Signal Kit](https://github.com/saroo98/profile-signal-kit) and [SVG README](https://github.com/Wenoxxxx/svg-readme). No reference code or artwork is incorporated.
