@@ -13,21 +13,21 @@
 
 <a id="skills"></a>
 
-<p><img src="assets/stack.svg" width="100%" alt="Skills &amp; Tools — languages, practical capabilities and the tools I use." /><img src="assets/languages.svg" width="100%" alt="Portfolio self-assessments out of 100: HTML/CSS 82; SQL 77; Python 68; PHP 66; JavaScript 48; TypeScript/Next.js 48, provisional." /><img src="assets/capabilities.svg" width="100%" alt="Portfolio self-assessments out of 100: Applied AI 68; UI/UX design 65; networking 60; cybersecurity 60; Scrum 56; Linux 43; Node.js 37." /><img src="assets/tools.svg" width="100%" alt="Design: Figma, interface design and interactive prototypes. AI assistance: Claude, Claude Code and AI with Python. Web and APIs: React, Next.js, Node.js, Vite and FastAPI. Desktop: PySide6, Npcap and Inno Setup. Data and infrastructure: MySQL, PostgreSQL, Apache, Azure and Vercel. Systems: Linux, TCP/IP, routing, switching, security fundamentals and network automation. Workflow: Scrum, data analysis and technical presentations." /></p>
+<p><img src="assets/stack.svg" width="100%" alt="Skills &amp; Tools — languages, practical capabilities and the tools I use." /><img src="assets/languages.svg" width="100%" alt="Portfolio self-assessments out of 100: HTML/CSS 82; SQL 77; Python 68; PHP 66; JavaScript 48; TypeScript/Next.js 48, provisional." /><img src="assets/capabilities.svg" width="100%" alt="Portfolio self-assessments out of 100: Applied AI 68; UI/UX design 65; networking 60; cybersecurity 60; Scrum 56; Linux 43; Node.js 37." /><picture><source media="(max-width: 600px)" srcset="assets/tools-mobile.svg" /><img src="assets/tools.svg" width="100%" alt="Design: Figma, interface design and interactive prototypes. AI assistance: Claude, Claude Code and AI with Python. Web and APIs: React, Next.js, Node.js, Vite and FastAPI. Desktop: PySide6, Npcap and Inno Setup. Data and infrastructure: MySQL, PostgreSQL, Apache, Azure and Vercel. Systems: Linux, TCP/IP, routing, switching, security fundamentals and network automation. Workflow: Scrum, data analysis and technical presentations." /></picture></p>
 
 <a id="work"></a>
 
 <img src="assets/projects.svg" width="100%" alt="Selected work — original screenshots from my portfolio" />
 
-<a href="https://themis.zenreverse.space"><img src="assets/project-themis.svg" width="100%" alt="Themis — CSV analysis and unusual-record detection. Next.js, TypeScript, FastAPI, PostgreSQL and Azure. Click to view the project." /></a>
+<a href="https://themis.zenreverse.space"><picture><source media="(max-width: 600px)" srcset="assets/project-themis-mobile.svg" /><img src="assets/project-themis.svg" width="100%" alt="Themis — CSV analysis and unusual-record detection. Next.js, TypeScript, FastAPI, PostgreSQL and Azure. Click to view the project." /></picture></a>
 
-<a href="https://sentinel.zenreverse.space"><img src="assets/project-sentinel.svg" width="100%" alt="Sentinel — Desktop network discovery and open-port auditing. Python, PySide6 and Npcap. Click to view the project." /></a>
+<a href="https://sentinel.zenreverse.space"><picture><source media="(max-width: 600px)" srcset="assets/project-sentinel-mobile.svg" /><img src="assets/project-sentinel.svg" width="100%" alt="Sentinel — Desktop network discovery and open-port auditing. Python, PySide6 and Npcap. Click to view the project." /></picture></a>
 
-<a href="https://rochy.zenreverse.space"><img src="assets/project-rochy.svg" width="100%" alt="Rochy Spa Center — Online bookings and appointment management. JavaScript, Node.js and PostgreSQL. Click to view the project." /></a>
+<a href="https://rochy.zenreverse.space"><picture><source media="(max-width: 600px)" srcset="assets/project-rochy-mobile.svg" /><img src="assets/project-rochy.svg" width="100%" alt="Rochy Spa Center — Online bookings and appointment management. JavaScript, Node.js and PostgreSQL. Click to view the project." /></picture></a>
 
-<a href="https://github.com/amberlight123/Sabores-del-Mar"><img src="assets/project-sabores.svg" width="100%" alt="Sabores del Mar — Restaurant menus, orders and reservations. PHP, MySQL and HTML/CSS. Click to view the project." /></a>
+<a href="https://github.com/amberlight123/Sabores-del-Mar"><picture><source media="(max-width: 600px)" srcset="assets/project-sabores-mobile.svg" /><img src="assets/project-sabores.svg" width="100%" alt="Sabores del Mar — Restaurant menus, orders and reservations. PHP, MySQL and HTML/CSS. Click to view the project." /></picture></a>
 
-<a href="https://github.com/amberlight123/vozelia_site_personal_project"><img src="assets/project-vozelia.svg" width="100%" alt="Vozelia — Personal VoIP operations project, independent of its reference company. PHP, MySQL, JavaScript and Apache. Click to view the project." /></a>
+<a href="https://github.com/amberlight123/vozelia_site_personal_project"><picture><source media="(max-width: 600px)" srcset="assets/project-vozelia-mobile.svg" /><img src="assets/project-vozelia.svg" width="100%" alt="Vozelia — Personal VoIP operations project, independent of its reference company. PHP, MySQL, JavaScript and Apache. Click to view the project." /></picture></a>
 
 <img src="assets/stats.svg" width="100%" alt="Public GitHub work as of October 12, 2026: four original projects, one practice fork and one profile repository." />
 
